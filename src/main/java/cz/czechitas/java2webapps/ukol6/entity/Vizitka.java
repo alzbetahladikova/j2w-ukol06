@@ -30,8 +30,8 @@ public class Vizitka {
     private String telefon;
     @Max(100)
     private String web;
-    @Max(100)
-   // private String celaAdresa;
+
+
 
     public Integer getId() {
         return id;
@@ -105,13 +105,9 @@ public class Vizitka {
         this.web = web;
     }
 
-   /* public String getCelaAdresa() {
-        return ulice +", "+ psc +" "+obec;
-    }
+public String getCelaAdresa (){return ulice+psc+obec;}
 
 
-
-    */
 }
 
 

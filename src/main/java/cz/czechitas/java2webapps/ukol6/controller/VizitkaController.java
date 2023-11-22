@@ -31,16 +31,16 @@ public class VizitkaController {
         return new ModelAndView("seznam")
                 .addObject("vizitka", vizitkaRepository.findAll());
     }
-/*
+
     @GetMapping("/{id}")
     public ModelAndView vizitka(@PathVariable int id) {
         return new ModelAndView("vizitka")
                 .addObject("vizitka", vizitkaRepository.findById(id).get());
     }
 
- */
+
 /*
-    @PostMapping("/{id}")
+    @PostMapping("/nova")
     public String ulozit(@ModelAttribute("formular") @Valid Vizitka vizitka, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "formular";
@@ -48,7 +48,9 @@ public class VizitkaController {
         vizitkaRepository.save(vizitka);
         return "redirect:/";}
 
+*/
 
- */
+
+
 }
 
