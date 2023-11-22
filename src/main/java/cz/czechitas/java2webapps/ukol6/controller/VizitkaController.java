@@ -31,14 +31,14 @@ public class VizitkaController {
         return new ModelAndView("seznam")
                 .addObject("vizitka", vizitkaRepository.findAll());
     }
-/*
+
     @GetMapping("/{id}")
     public ModelAndView vizitka(@PathVariable int id) {
         return new ModelAndView("vizitka")
                 .addObject("vizitka", vizitkaRepository.findById(id).get());
     }
 
- */
+
 /*
     @PostMapping("/{id}")
     public String ulozit(@ModelAttribute("formular") @Valid Vizitka vizitka, BindingResult bindingResult) {
