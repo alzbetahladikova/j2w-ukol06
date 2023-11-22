@@ -1,8 +1,6 @@
 package cz.czechitas.java2webapps.ukol6.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import org.springframework.data.annotation.ReadOnlyProperty;
@@ -10,6 +8,7 @@ import org.springframework.data.annotation.ReadOnlyProperty;
 @Entity
 public class Vizitka {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @NotBlank
     @Max(100)
