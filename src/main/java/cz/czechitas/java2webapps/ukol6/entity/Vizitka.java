@@ -2,8 +2,10 @@ package cz.czechitas.java2webapps.ukol6.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
+import org.springframework.data.annotation.ReadOnlyProperty;
 
 @Entity
 public class Vizitka {
@@ -30,8 +32,8 @@ public class Vizitka {
     private String telefon;
     @Max(100)
     private String web;
-
-
+@Transient
+private String celaAdresa;
 
     public Integer getId() {
         return id;
