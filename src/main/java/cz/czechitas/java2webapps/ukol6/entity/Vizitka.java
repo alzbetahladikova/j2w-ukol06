@@ -31,7 +31,7 @@ public class Vizitka {
     @Max(100)
     private String web;
     @Max(100)
-    private String celaAdresa;
+   // private String celaAdresa;
 
     public Integer getId() {
         return id;
@@ -105,11 +105,13 @@ public class Vizitka {
         this.web = web;
     }
 
-    public String getCelaAdresa() {
+   /* public String getCelaAdresa() {
         return ulice +", "+ psc +" "+obec;
     }
 
 
+
+    */
 }
 
 
