@@ -3,6 +3,8 @@ package cz.czechitas.java2webapps.ukol6.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.data.annotation.ReadOnlyProperty;
 
 @Entity
@@ -11,25 +13,33 @@ public class Vizitka {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @NotBlank
-    @Max(100)
+    @Size(min = 3, message = "{validation.name.size.too_short}")
+    @Size(max = 100, message = "{validation.name.size.too_long}")
     private String celeJmeno;
     @NotBlank
-    @Max(100)
+    @Size(min = 1, message = "{validation.name.size.too_short}")
+    @Size(max = 100, message = "{validation.name.size.too_long}")
     private String firma;
     @NotBlank
-    @Max(100)
+    @Size(min = 1, message = "{validation.name.size.too_short}")
+    @Size(max = 100, message = "{validation.name.size.too_long}")
     private String ulice;
     @NotBlank
-    @Max(100)
+    @Size(min = 1, message = "{validation.name.size.too_short}")
+    @Size(max = 100, message = "{validation.name.size.too_long}")
     private String obec;
     @NotBlank
-    @Max(5)
+    @Size(min = 5, message = "{validation.name.size.too_short}")
+    @Size(max = 5, message = "{validation.name.size.too_long}")
     private String psc;
-    @Max(100)
+
+    @Size(max = 100, message = "{validation.name.size.too_long}")
     private String email;
-    @Max(20)
+
+    @Size(max = 100, message = "{validation.name.size.too_long}")
     private String telefon;
-    @Max(100)
+
+    @Size(max = 100, message = "{validation.name.size.too_long}")
     private String web;
 @Transient
 private String celaAdresa;

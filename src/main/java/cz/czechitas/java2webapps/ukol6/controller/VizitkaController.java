@@ -47,23 +47,23 @@ public class VizitkaController {
         else {
             return ResponseEntity.notFound().build();
         }
-
-
     }
 
 
-/*
+    @GetMapping("/nova")
+    public ModelAndView nova() {
+        return new ModelAndView("formular")
+                .addObject("vizitka", new Vizitka());
+    }
+
+    // TODO: 22.11.2023 opravit odesílání dat do databáze
     @PostMapping("/nova")
-    public String ulozit(@ModelAttribute("formular") @Valid Vizitka vizitka, BindingResult bindingResult) {
+    public String odeslat(@ModelAttribute("vizitka") @Valid Vizitka vizitka, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "formular";
         }
         vizitkaRepository.save(vizitka);
         return "redirect:/";}
-
-*/
-
-
 
 }
 
