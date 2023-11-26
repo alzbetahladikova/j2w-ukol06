@@ -3,6 +3,7 @@ package cz.czechitas.java2webapps.ukol6.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.data.annotation.ReadOnlyProperty;
@@ -29,8 +30,7 @@ public class Vizitka {
     @Size(max = 100, message = "{validation.name.size.too_long}")
     private String obec;
     @NotBlank
-    @Size(min = 5, message = "{validation.name.size.too_short}")
-    @Size(max = 5, message = "{validation.name.size.too_long}")
+    @Pattern(regexp = "\\d{5}")
     private String psc;
 
     @Size(max = 100, message = "{validation.name.size.too_long}")

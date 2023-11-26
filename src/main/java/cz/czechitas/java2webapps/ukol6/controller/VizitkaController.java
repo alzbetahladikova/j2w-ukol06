@@ -2,11 +2,9 @@ package cz.czechitas.java2webapps.ukol6.controller;
 
 import cz.czechitas.java2webapps.ukol6.entity.Vizitka;
 import cz.czechitas.java2webapps.ukol6.repository.VizitkaRepository;
-import cz.czechitas.java2webapps.ukol6.service.VizitkaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Objects;
 import java.util.Optional;
 
 @Controller
@@ -56,12 +53,12 @@ public class VizitkaController {
                 .addObject("vizitka", new Vizitka());
     }
 
-    // TODO: 22.11.2023 opravit odesílání dat do databáze
+
     @PostMapping("/nova")
-    public String odeslat(@ModelAttribute("vizitka") @Valid Vizitka vizitka, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "formular";
-        }
+    public String pridat(@ModelAttribute("vizitka") @Valid Vizitka vizitka, BindingResult bindingResult) {
+      if (bindingResult.hasErrors()) {
+           return "formular";
+       }
         vizitkaRepository.save(vizitka);
         return "redirect:/";}
 
